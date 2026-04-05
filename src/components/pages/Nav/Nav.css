@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(12px, 3vw, 20px) clamp(16px, 8vw, 100px);
+}
+
+.nav_right {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 16px);
+}
+
+.nav .btn {
+  font-size: clamp(13px, 2vw, 16px);
+  margin-right: 0;
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
+}
+
+.nav_left a {
+  letter-spacing: 0.8px;
+  color: #7241FF;
+  font-size: clamp(18px, 4vw, 28px);
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav .sign_in {
+  border: 1px solid #2A2B3A;
+  box-shadow: none;
+}

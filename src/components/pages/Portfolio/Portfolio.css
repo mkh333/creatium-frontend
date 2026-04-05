@@ -1,0 +1,224 @@
+.portfolio_container {
+    width: min(600px, calc(100% - 32px));
+    margin: auto;
+    padding: clamp(24px, 5vw, 46px) 0;
+}
+
+.portfolio_container h1 {
+    background: linear-gradient(#627FFF, #865BFF);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: clamp(22px, 5vw, 32px);
+}
+
+.portfolio_form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 16px;
+}
+
+.portfolio_form input,
+.portfolio_form textarea {
+    width: 100%;
+    padding: clamp(12px, 3vw, 20px);
+    box-sizing: border-box;
+    box-shadow: 0 0 6px rgba(108, 99, 255, 0.3);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #6c63ff;
+    background-color: transparent;
+    color: white;
+    font-size: clamp(13px, 2vw, 15px);
+    border-radius: 4px;
+}
+
+.portfolio_form textarea {
+    resize: vertical;
+    min-height: 90px;
+    grid-column: 1 / -1;
+}
+
+/* Full width items */
+.portfolio_form input[name="profession"],
+.portfolio_form input[name="skills"],
+.portfolio_form input[name="education"],
+.portfolio_form input[name="experience"],
+.portfolio_projects,
+.portfolio_media,
+.portfolio_button,
+.portfolio_form p {
+    grid-column: 1 / -1;
+}
+
+/* Buttons */
+.portfolio_container .btn {
+    border: none;
+    padding: clamp(10px, 2vw, 14px) clamp(16px, 3vw, 24px);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: clamp(13px, 2vw, 15px);
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.portfolio_container .btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.btn_danger {
+    background: #fee2e2 !important;
+    color: #b91c1c !important;
+}
+
+/* Avatar + Theme side by side */
+.portfolio_media {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.portfolio_img {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-width: 160px;
+}
+
+.portfolio_img_actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.portfolio_img img {
+    width: clamp(80px, 20vw, 180px);
+    height: clamp(80px, 20vw, 180px);
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Save / Download */
+.portfolio_button {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.portfolio_button .btn {
+    background-color: #6c63ff;
+    color: white;
+    width: clamp(120px, 35%, 180px);
+}
+
+/* Projects */
+.portfolio_projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.portfolio_projects .btn {
+    width: fit-content;
+}
+
+.portfolio_projects_title {
+    font-weight: 600;
+    font-size: clamp(13px, 2vw, 15px);
+}
+
+.portfolio_project_item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: clamp(10px, 2vw, 14px);
+    border: 1px solid rgba(108, 99, 255, 0.3);
+    border-radius: 10px;
+}
+
+.portfolio_project_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+/* Theme picker */
+.portfolio_theme_picker {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 160px;
+}
+
+.color_picker_label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 2px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: clamp(13px, 2vw, 14px);
+    transition: opacity 0.2s;
+    width: fit-content;
+    color: white;
+}
+
+.color_picker_label:hover { opacity: 0.8; }
+
+.color_input_hidden { display: none; }
+
+.color_dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.portfolio_experience_dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.portfolio_date_field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.portfolio_date_field label {
+    font-size: 11px;
+    color: #77798F;
+}
+
+.portfolio_date_field input[type="month"] {
+    color-scheme: dark;
+}
+
+.portfolio_form select {
+  width: 100%;
+  padding: clamp(12px, 3vw, 20px);
+  box-sizing: border-box;
+  box-shadow: 0 0 6px rgba(108, 99, 255, 0.3);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #6c63ff;
+  background-color: #0a0a1a;
+  color: white;
+  font-size: clamp(13px, 2vw, 15px);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.portfolio_form select option {
+  background-color: #0a0a1a;
+}

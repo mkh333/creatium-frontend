@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Centra', sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #6c63ff transparent;
+}
+
+@font-face {
+	font-family: Centra;
+	src: url('./font/Roboto-Bold.ttf');
+}
+
+.main {
+  background-color: #010314;
+}
