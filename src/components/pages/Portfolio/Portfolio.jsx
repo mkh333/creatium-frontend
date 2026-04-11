@@ -119,19 +119,12 @@ export const Portfolio = () => {
     }
   };
 
-  const handleAvatarChange = async (e) => {
+  const handleAvatarChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
-    const data = new FormData();
-    data.append("image", file);
-    try {
-      const res = await axios.post("/upload", data, {
-        headers: { "Content-Type": "multipart/form-data" }
-      });
-      setFormData(prev => ({ ...prev, avatar: res.data.url }));
-    } catch {
-      setError("Photo upload failed");
-    }
+    const reader = new FileReader();
+    reader.onload = () => setFormData(prev => ({ ...prev, avatar: reader.result }));
+    reader.readAsDataURL(file);
   };
 
   const handleRemoveAvatar = () =>
