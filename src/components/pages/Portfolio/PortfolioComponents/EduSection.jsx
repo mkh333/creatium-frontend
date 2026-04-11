@@ -35,8 +35,10 @@ export const EducationSection = ({ education, onChange, onAdd, onRemove }) => (
           {["startDate", "endDate"].map(field => (
             <div key={field} className="portfolio_date_field">
               <label>{field === "startDate" ? "Start date" : "End date"}</label>
-              <input type="month" value={edu[field]}
-                onChange={e => onChange(i, field, e.target.value)} />
+              <input type="month" value={exp[field]}
+                max={new Date().toISOString().slice(0, 7)}
+                onChange={e => onChange(i, field, e.target.value)} 
+              />
             </div>
           ))}
         </div>

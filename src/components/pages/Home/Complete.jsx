@@ -23,7 +23,7 @@ export const Complete = () => {
                 Boost your online presence the easy way!
               </p>
               <NavLink to={isAuth ? "/portfolio" : "/sign-up"} className="btn">
-                {isAuth ? "My Portfolio" : "Complete portfolio"}
+                {"Complete portfolio"}
               </NavLink>
             </div>
         </div>

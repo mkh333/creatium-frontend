@@ -14,7 +14,7 @@ export const Home = () => {
         <h1>Your Story, Your Way — Build Your Personal Portfolio</h1>
         <p className="small_text">Showcase your journey by crafting a personal portfolio in minutes</p>
         <NavLink to={isAuth ? "/portfolio" : "/sign-up"} className="btn">
-          {isAuth ? "My Portfolio" : "Get Started"}
+          {"Get Started"}
         </NavLink>
       </div>
       <img src={header} className="header_img" alt="Portfolio builder preview" />

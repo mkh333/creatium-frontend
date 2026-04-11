@@ -222,3 +222,7 @@
 .portfolio_form select option {
   background-color: #0a0a1a;
 }
+
+.portfolio_img img {
+  border-radius: 50%;
+}
