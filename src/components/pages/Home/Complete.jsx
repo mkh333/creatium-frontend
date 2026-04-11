@@ -3,6 +3,8 @@ import union from "../../../img/union.png";
 import { NavLink } from "react-router-dom";
 
 export const Complete = () => {
+  const isAuth = !!localStorage.getItem("token");
+
   return (
     <div>
         <h2 className="complete_main_text">5 minute set-up process</h2>
@@ -20,7 +22,9 @@ export const Complete = () => {
                 Confirm or make any changes you like, and  Grab a special link to share your portfolio with everyone. 
                 Boost your online presence the easy way!
               </p>
-              <NavLink to="/portfolio" className="btn">Complete portfolio</NavLink>
+              <NavLink to={isAuth ? "/portfolio" : "/sign-up"} className="btn">
+                {isAuth ? "My Portfolio" : "Complete portfolio"}
+              </NavLink>
             </div>
         </div>
     </div>
