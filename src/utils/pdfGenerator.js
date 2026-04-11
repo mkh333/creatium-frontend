@@ -29,11 +29,21 @@ export const generatePDF = async (formData, themeColor = "#6c63ff") => {
       const img = new Image();
       img.src = formData.avatar;
       await new Promise(resolve => { img.onload = resolve; });
+
       const size = 40;
-      const ratio = img.width / img.height;
-      const w = ratio > 1 ? size : size * ratio;
-      const h = ratio > 1 ? size / ratio : size;
-      doc.addImage(formData.avatar, "JPEG", pageWidth - 15 - w, 5 + (size - h) / 2, w, h);
+      const canvas = document.createElement("canvas");
+      canvas.width = size * 3;
+      canvas.height = size * 3;
+      const ctx = canvas.getContext("2d");
+
+      ctx.beginPath();
+      ctx.arc(size * 1.5, size * 1.5, size * 1.5, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.clip();
+      ctx.drawImage(img, 0, 0, size * 3, size * 3);
+
+      const roundedImg = canvas.toDataURL("image/png");
+      doc.addImage(roundedImg, "PNG", pageWidth - 15 - size, 5, size, size);
     } catch {}
   }
 
