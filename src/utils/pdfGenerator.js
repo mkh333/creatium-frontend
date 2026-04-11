@@ -40,7 +40,13 @@ export const generatePDF = async (formData, themeColor = "#6c63ff") => {
       ctx.arc(size * 1.5, size * 1.5, size * 1.5, 0, Math.PI * 2);
       ctx.closePath();
       ctx.clip();
-      ctx.drawImage(img, 0, 0, size * 3, size * 3);
+
+      const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
+      const w = img.width * scale;
+      const h = img.height * scale;
+      const offsetX = (canvas.width - w) / 2;
+      const offsetY = (canvas.height - h) / 2;
+      ctx.drawImage(img, offsetX, offsetY, w, h);
 
       const roundedImg = canvas.toDataURL("image/png");
       doc.addImage(roundedImg, "PNG", pageWidth - 15 - size, 5, size, size);

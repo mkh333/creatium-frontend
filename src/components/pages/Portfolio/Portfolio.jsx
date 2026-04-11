@@ -106,6 +106,7 @@ export const Portfolio = () => {
     setSuccess("");
     setError("");
     try {
+      setLoading(true);
       const data = getPreparedData();
       if (formData._id) {
         await axios.patch(`/portfolio/${formData._id}`, data);
@@ -116,6 +117,8 @@ export const Portfolio = () => {
     } catch (err) {
       const res = err.response?.data;
       setError(Array.isArray(res) ? res.map(i => i.msg).join(", ") : res?.message || "Error while saving");
+    } finally {
+      setLoading(false);
     }
   };
 
